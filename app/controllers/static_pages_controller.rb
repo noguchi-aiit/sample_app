@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
   def help
     #app/views/static_pages/help.html.erbにデフォルトは動作
   end
+  def about 
+    
+  end
 end
