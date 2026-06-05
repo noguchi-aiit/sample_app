@@ -3,11 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.10'
 
+
+gem 'active_storage_validations', '0.9.8'
 gem 'bootsnap',        '1.16.0', require: false
 gem 'concurrent-ruby', '1.3.4'
 gem 'faker',           '2.21.0'
 gem 'will_paginate',           '3.3.1'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'image_processing', '1.12.2'
 gem 'importmap-rails', '1.1.5'
 gem 'jbuilder',        '2.14.1'
 gem 'puma',            '6.6.1'
@@ -44,8 +47,9 @@ group :test do
 end
 
 group :production do
-    gem "pg", "1.3.5"
-  end
+  gem 'aws-sdk-s3',    '1.114.0', require: false
+  gem 'mailgun-ruby',  '1.3.10'
+end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
 # gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
